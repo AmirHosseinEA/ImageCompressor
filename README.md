@@ -1,4 +1,4 @@
-<h1 align="left">ImageCompressor</h1>
+<h1 align="left">ImageCompressor V1.0</h1>
 
 ###
 
