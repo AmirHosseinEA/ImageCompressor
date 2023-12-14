@@ -6,6 +6,12 @@
 
 ###
 
+###
+
+<a href="https://ministerdv.com/Home/GetImageCompressor?type=zip">Download Portable Release V1.0</a>
+
+###
+
 <div align="left">
   <a href="https://www.linkedin.com/in/ministerdv" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
