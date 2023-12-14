@@ -262,14 +262,14 @@
 
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Github" Padding="20">
+                <TabItem Header="MinisterDv" Padding="20">
                     <StackPanel VerticalAlignment="Center">
                         <Image Source="img/MinisterDv-Logo-Tr.png" HorizontalAlignment="Center" Width="200" />
 
                         <TextBlock HorizontalAlignment="Center" Margin="0,20,0,20" FontSize="20" FontWeight="Bold" Foreground="Black">MinisterDv</TextBlock>
 
                         <!-- Link/Button at the bottom -->
-                        <Button x:Name="btn_ministerdv" Content="Go to Githb" Style="{StaticResource Btn-Primary}" HorizontalAlignment="Center" Width="100" Click="btn_ministerdv_Click" />
+                        <Button x:Name="btn_ministerdv" Content="About me" Style="{StaticResource Btn-Primary}" HorizontalAlignment="Center" Width="100" Click="btn_ministerdv_Click" />
                     </StackPanel>
                 </TabItem>
             </TabControl>

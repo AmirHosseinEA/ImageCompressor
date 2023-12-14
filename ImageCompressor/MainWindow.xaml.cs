@@ -364,7 +364,7 @@ namespace ImageCompressor
         }
         private void btn_ministerdv_Click(object sender, RoutedEventArgs e)
         {
-            string url = "https://github.com/MinisterDv/Image-Compressor";
+            string url = "https://ministerdv.com";
 
             try
             {
