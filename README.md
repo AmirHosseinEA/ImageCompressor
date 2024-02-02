@@ -8,7 +8,7 @@
 
 ###
 
-<a href="https://ministerdv.com/Home/GetImageCompressor/windows/zip">Download Portable Release V1.0</a>
+<a href="https://ministerdv.com/image-compressor/portable/MinisterDv-ImageCompressor-Windows-Portable-v1.0.zip">Download Portable Release V1.0</a>
 
 ###
 
