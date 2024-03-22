@@ -362,9 +362,24 @@ namespace ImageCompressor
         {
 
         }
-        private void btn_ministerdv_Click(object sender, RoutedEventArgs e)
+        private void btn_amirhosseinea_linkedin_Click(object sender, RoutedEventArgs e)
         {
-            string url = "https://ministerdv.com";
+            string url = "https://www.linkedin.com/in/amirhosseinea/";
+
+            try
+            {
+                Process.Start("explorer", url);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+        private void btn_amirhosseinea_github_Click(object sender, RoutedEventArgs e)
+        {
+            string url = "https://github.com/AmirHosseinEA";
 
             try
             {

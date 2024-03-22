@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageCompressor"
         mc:Ignorable="d"
-        Title="Image Compressor by MinisterDV" MaxHeight="680" MaxWidth="380" MinHeight="680" MinWidth="380">
+        Title="Image Compressor by AmirHosseinEA" MaxHeight="680" MaxWidth="380" MinHeight="680" MinWidth="380">
     <Window.Resources>
         <Style x:Key="Btn-Primary" TargetType="Button">
             <Setter Property="Background" Value="#007BFF" />
@@ -51,6 +51,26 @@
             <Setter Property="Background" Value="#28a745" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="BorderBrush" Value="#28a745" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Btn-Dark" TargetType="Button">
+            <Setter Property="Background" Value="#000" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="#000" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="Height" Value="40"/>
             <Setter Property="Cursor" Value="Hand" />
@@ -262,14 +282,15 @@
 
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="MinisterDv" Padding="20">
+                <TabItem Header="About Me" Padding="20">
                     <StackPanel VerticalAlignment="Center">
-                        <Image Source="img/MinisterDv-Logo-Tr.png" HorizontalAlignment="Center" Width="200" />
+                        <Image Source="img/AmirHosseinEA-Logo-Tr.png" HorizontalAlignment="Center" Width="200" />
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,20" FontSize="20" FontWeight="Bold" Foreground="Black">MinisterDv</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,20" FontSize="20" FontWeight="Bold" Foreground="Black">AmirHosseinEA</TextBlock>
 
                         <!-- Link/Button at the bottom -->
-                        <Button x:Name="btn_ministerdv" Content="About me" Style="{StaticResource Btn-Primary}" HorizontalAlignment="Center" Width="100" Click="btn_ministerdv_Click" />
+                        <Button x:Name="btn_amirhosseinea_linkedin" Content="My linkedIn" Style="{StaticResource Btn-Primary}" HorizontalAlignment="Center" Width="100" Click="btn_amirhosseinea_linkedin_Click" Margin="0 0 0 10" />
+                        <Button x:Name="btn_amirhosseinea_github" Content="My Github" Style="{StaticResource Btn-Dark}" HorizontalAlignment="Center" Width="100" Click="btn_amirhosseinea_github_Click" />
                     </StackPanel>
                 </TabItem>
             </TabControl>

@@ -9,19 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="img\MinisterDv-Logo-Tr.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="img\MinisterDv-Logo-Tr.png" />
   </ItemGroup>
 
 </Project>
