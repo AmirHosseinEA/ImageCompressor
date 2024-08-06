@@ -1,5 +1,5 @@
 
-# ImageCompressor V1.0
+# ImageCompressor
 
 A Powerfull Windows-based Software to compress a large volume of images at very high speed and in a short time using multithreading.
 
