@@ -43,7 +43,7 @@ namespace ImageCompressor
             slider_percent_files.ValueChanged += slider_percent_files_ValueChanged;
         }
 
-        //click events
+        //events
         private void btn_input_folder_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -170,80 +170,6 @@ namespace ImageCompressor
             cancellationTokenSource?.Cancel();
         }
 
-        //functions
-        private async Task CompressImagesAsync(string[] imageFiles, string outputFolder, int compressionQuality, CancellationToken cancellationToken, IProgress<int> progress)
-        {
-            compressionTasks = new List<Task>();
-
-
-            int skip = 0;
-            int tread;
-            if (imageFiles.Count() <= 100)
-            {
-                tread = 1;
-            }
-            else if (imageFiles.Count() > 100 && imageFiles.Count() <= 1000)
-            {
-                tread = 2;
-            }
-            else
-            {
-                //tread = Environment.ProcessorCount;
-                tread = 4;
-            }
-            int take = (int)Math.Ceiling((decimal)(imageFiles.Count() / tread));
-
-
-
-            for (int i = 0; i < tread; i++)
-            {
-                var image_files = imageFiles.Skip(skip + (i * take)).Take(take);
-
-
-                compressionTasks.Add(Task.Run(() =>
-                {
-                    foreach (var image in image_files)
-                    {
-                        if (cancellationToken.IsCancellationRequested)
-                        {
-                            cancellationToken.ThrowIfCancellationRequested();
-                        }
-
-                        using (var magick_image = new MagickImage(image))
-                        {
-                            magick_image.Quality = compressionQuality;
-
-                            string outputFilePath = Path.Combine(outputFolder, Path.GetFileName(image));
-
-                            magick_image.Write(outputFilePath);
-
-                            // Update the progress.
-                            progress.Report(1);
-                        }
-                    }
-
-                }, cancellationToken));
-            }
-
-            await Task.WhenAll(compressionTasks);
-        }
-
-        private void UpdateProgressBar(int percentComplete)
-        {
-            compression_progressBar.Value += 1;
-            lbl_compression_progressBar.Content = compression_progressBar.Value + " files compressed!";
-            image_compressed_count++;
-        }
-
-        private static IEnumerable<IEnumerable<T>> Partition<T>(IEnumerable<T> source, int chunkSize)
-        {
-            while (source.Any())
-            {
-                yield return source.Take(chunkSize);
-                source = source.Skip(chunkSize);
-            }
-        }
-
         private void btn_input_file_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -362,6 +288,7 @@ namespace ImageCompressor
         {
 
         }
+
         private void btn_amirhosseinea_linkedin_Click(object sender, RoutedEventArgs e)
         {
             string url = "https://www.linkedin.com/in/amirhosseinea/";
@@ -375,7 +302,6 @@ namespace ImageCompressor
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
 
         private void btn_amirhosseinea_github_Click(object sender, RoutedEventArgs e)
         {
@@ -401,6 +327,71 @@ namespace ImageCompressor
         {
             int percentage = (int)slider_percent_files.Value;
             lbl_percent_files.Content = $"{percentage}%";
+        }
+
+        //functions
+        private async Task CompressImagesAsync(string[] imageFiles, string outputFolder, int compressionQuality, CancellationToken cancellationToken, IProgress<int> progress)
+        {
+            compressionTasks = new List<Task>();
+
+
+            int skip = 0;
+            int tread;
+            if (imageFiles.Count() <= 100)
+            {
+                tread = 1;
+            }
+            else if (imageFiles.Count() > 100 && imageFiles.Count() <= 1000)
+            {
+                tread = 2;
+            }
+            else
+            {
+                //tread = Environment.ProcessorCount;
+                tread = 4;
+            }
+            int take = (int)Math.Ceiling((decimal)(imageFiles.Count() / tread));
+
+
+
+            for (int i = 0; i < tread; i++)
+            {
+                var image_files = imageFiles.Skip(skip + (i * take)).Take(take);
+
+
+                compressionTasks.Add(Task.Run(() =>
+                {
+                    foreach (var image in image_files)
+                    {
+                        if (cancellationToken.IsCancellationRequested)
+                        {
+                            cancellationToken.ThrowIfCancellationRequested();
+                        }
+
+                        using (var magick_image = new MagickImage(image))
+                        {
+                            magick_image.Quality = compressionQuality;
+
+                            string outputFilePath = Path.Combine(outputFolder, Path.GetFileName(image));
+
+                            magick_image.Write(outputFilePath);
+
+                            // Update the progress.
+                            progress.Report(1);
+                        }
+                    }
+
+                }, cancellationToken));
+            }
+
+            await Task.WhenAll(compressionTasks);
+        }
+
+        private void UpdateProgressBar(int percentComplete)
+        {
+            compression_progressBar.Value += 1;
+            lbl_compression_progressBar.Content = compression_progressBar.Value + " files compressed!";
+            image_compressed_count++;
         }
     }
 }
