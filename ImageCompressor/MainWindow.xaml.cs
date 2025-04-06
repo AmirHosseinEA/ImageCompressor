@@ -367,7 +367,7 @@ namespace ImageCompressor
                         {
                             cancellationToken.ThrowIfCancellationRequested();
                         }
-
+                       
                         using (var magick_image = new MagickImage(image))
                         {
                             magick_image.Quality = compressionQuality;
