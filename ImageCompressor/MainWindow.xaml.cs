@@ -370,7 +370,7 @@ namespace ImageCompressor
                        
                         using (var magick_image = new MagickImage(image))
                         {
-                            magick_image.Quality = compressionQuality;
+                            magick_image.Quality = (uint)compressionQuality;
 
                             string outputFilePath = Path.Combine(outputFolder, Path.GetFileName(image));
 
