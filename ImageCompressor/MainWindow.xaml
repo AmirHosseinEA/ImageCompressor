@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageCompressor"
         mc:Ignorable="d"
-        Title="Image Compressor by AmirHosseinEA" MaxHeight="680" MaxWidth="380" MinHeight="680" MinWidth="380">
+        Title="Image Compressor by AmirHosseinEA" MaxHeight="680" MaxWidth="623" MinHeight="680" MinWidth="623" d:DesignWidth="500">
     <Window.Resources>
         <Style x:Key="Btn-Primary" TargetType="Button">
             <Setter Property="Background" Value="#007BFF" />
@@ -101,8 +101,8 @@
                                                   VerticalAlignment="Center"
                                                   ContentSource="Header"
                                                   Margin="10,5"/>
-                                
-                                
+
+
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -141,7 +141,7 @@
         <Grid>
 
             <TabControl ItemContainerStyle="{StaticResource TabItemStyle}">
-                <TabItem Header="Folder Selection" Padding="20">
+                <TabItem Header="Image Folder Selection" Padding="20">
                     <StackPanel>
 
                         <!--input part-->
@@ -223,7 +223,8 @@
 
                     </StackPanel>
                 </TabItem>
-                <TabItem Header="Files Selection" Padding="20">
+
+                <TabItem Header="Image Files Selection" Padding="20">
                     <StackPanel>
 
                         <!--input part-->
@@ -282,6 +283,142 @@
 
                     </StackPanel>
                 </TabItem>
+
+                <TabItem Header="PDF Folder Selection" Padding="20">
+                    <StackPanel>
+
+                        <!--input part-->
+                        <TextBlock 
+                            x:Name="lbl_input_folder_pdf"
+                            Margin="0,40,0,5"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            TextWrapping="Wrap"
+                            TextAlignment="Center"
+                            FontSize="15"
+                            Foreground="Black">
+                        no input folder selected.
+                        </TextBlock>
+                        <Button 
+        x:Name="btn_input_folder_pdf"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        Width="250"
+        Margin="0,0,0,20"
+        Click="btn_input_folder_Click"
+        Style="{StaticResource Btn-Primary}">
+                            Click here to select input folder
+                        </Button>
+
+                        <!--output part-->
+                        <TextBlock
+        x:Name="lbl_output_folder_pdf"
+        Margin="0,10,0,5"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        TextWrapping="Wrap"
+        TextAlignment="Center"
+        FontSize="15"
+        Foreground="Black">
+    no output folder selected.
+                        </TextBlock>
+                        <Button
+        x:Name="btn_output_folder_pdf"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        Margin="0,0,0,20"
+        Width="250"
+        Click="btn_output_folder_Click"
+        Style="{StaticResource Btn-Danger}">
+                            Click here to select output folder
+                        </Button>
+
+                        <!--proccess part-->
+                        <Button 
+        x:Name="btn_compress_folder_pdf"
+        Margin="0,35,0,0"
+        Width="120"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        Click="btn_compress_folder_Click"
+        Style="{StaticResource Btn-Success}">
+                            Start compress
+                        </Button>
+
+                        <Button 
+        x:Name="btn_cancell_compress_folder_pdf"
+        Margin="0,10,0,20"
+        Width="70"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        Click="btn_cancell_compress_folder_Click"
+        Visibility="Hidden"
+        Style="{StaticResource Btn-Danger}">
+                            Cancel
+                        </Button>
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="PDF Files Selection" Padding="20">
+                    <StackPanel>
+
+                        <Image Source="/Pdf.png" HorizontalAlignment="Center" Width="100" Margin="0 40 0 0" />
+
+
+                        <!--input part-->
+                        <TextBlock 
+        x:Name="lbl_input_file_pdf"
+        Margin="0,40,0,5"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center" 
+        TextWrapping="Wrap"
+        TextAlignment="Center"
+        FontSize="15"
+        Foreground="Black">
+        no input file selected.
+                        </TextBlock>
+                        <Button 
+        x:Name="btn_input_file_pdf"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Width="250"
+        Margin="0,0,0,20"
+        Click="btn_input_file_Click"
+        Style="{StaticResource Btn-Primary}">
+                            Click here to select input files
+                        </Button>
+
+              
+
+                        <!--proccess part-->
+                        <Button 
+        x:Name="btn_compress_file_pdf"
+        Margin="0,35,0,0"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        Padding="10"
+        Click="btn_compress_file_Click"
+        Style="{StaticResource Btn-Success}"
+        Width="120">
+                            Start compress
+                        </Button>
+
+                        <Button 
+        x:Name="btn_cancell_compress_filepdf"
+        Margin="0,10,0,20"
+        Width="70"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        Click="btn_cancell_compress_file_Click"
+        Style="{StaticResource Btn-Danger}"
+        Visibility="Hidden">
+                            Cancel
+                        </Button>
+
+                    </StackPanel>
+                </TabItem>
+
                 <TabItem Header="About Me" Padding="20">
                     <StackPanel VerticalAlignment="Top">
                         <Image Source="/AmirHosseinEA-Logo-Tr.png" HorizontalAlignment="Center" Width="200" />
