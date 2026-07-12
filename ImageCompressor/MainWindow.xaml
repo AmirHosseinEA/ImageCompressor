@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageCompressor"
         mc:Ignorable="d"
-        Title="Image Compressor by AmirHosseinEA" MaxHeight="680" MaxWidth="623" MinHeight="680" MinWidth="623" d:DesignWidth="500">
+        Title="Image Compressor by AmirHossein EA" MaxHeight="680" MaxWidth="372" MinHeight="680" MinWidth="372" d:DesignWidth="500">
     <Window.Resources>
         <Style x:Key="Btn-Primary" TargetType="Button">
             <Setter Property="Background" Value="#007BFF" />
@@ -284,150 +284,22 @@
                     </StackPanel>
                 </TabItem>
 
-                <TabItem Header="PDF Folder Selection" Padding="20">
-                    <StackPanel>
-
-                        <!--input part-->
-                        <TextBlock 
-                            x:Name="lbl_input_folder_pdf"
-                            Margin="0,40,0,5"
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center"
-                            TextWrapping="Wrap"
-                            TextAlignment="Center"
-                            FontSize="15"
-                            Foreground="Black">
-                        no input folder selected.
-                        </TextBlock>
-                        <Button 
-        x:Name="btn_input_folder_pdf"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        Width="250"
-        Margin="0,0,0,20"
-        Click="btn_input_folder_Click"
-        Style="{StaticResource Btn-Primary}">
-                            Click here to select input folder
-                        </Button>
-
-                        <!--output part-->
-                        <TextBlock
-        x:Name="lbl_output_folder_pdf"
-        Margin="0,10,0,5"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        TextWrapping="Wrap"
-        TextAlignment="Center"
-        FontSize="15"
-        Foreground="Black">
-    no output folder selected.
-                        </TextBlock>
-                        <Button
-        x:Name="btn_output_folder_pdf"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        Margin="0,0,0,20"
-        Width="250"
-        Click="btn_output_folder_Click"
-        Style="{StaticResource Btn-Danger}">
-                            Click here to select output folder
-                        </Button>
-
-                        <!--proccess part-->
-                        <Button 
-        x:Name="btn_compress_folder_pdf"
-        Margin="0,35,0,0"
-        Width="120"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        Click="btn_compress_folder_Click"
-        Style="{StaticResource Btn-Success}">
-                            Start compress
-                        </Button>
-
-                        <Button 
-        x:Name="btn_cancell_compress_folder_pdf"
-        Margin="0,10,0,20"
-        Width="70"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        Click="btn_cancell_compress_folder_Click"
-        Visibility="Hidden"
-        Style="{StaticResource Btn-Danger}">
-                            Cancel
-                        </Button>
-
-                    </StackPanel>
-                </TabItem>
-
-                <TabItem Header="PDF Files Selection" Padding="20">
-                    <StackPanel>
-
-                        <Image Source="/Pdf.png" HorizontalAlignment="Center" Width="100" Margin="0 40 0 0" />
-
-
-                        <!--input part-->
-                        <TextBlock 
-        x:Name="lbl_input_file_pdf"
-        Margin="0,40,0,5"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center" 
-        TextWrapping="Wrap"
-        TextAlignment="Center"
-        FontSize="15"
-        Foreground="Black">
-        no input file selected.
-                        </TextBlock>
-                        <Button 
-        x:Name="btn_input_file_pdf"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Width="250"
-        Margin="0,0,0,20"
-        Click="btn_input_file_Click"
-        Style="{StaticResource Btn-Primary}">
-                            Click here to select input files
-                        </Button>
-
-              
-
-                        <!--proccess part-->
-                        <Button 
-        x:Name="btn_compress_file_pdf"
-        Margin="0,35,0,0"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        Padding="10"
-        Click="btn_compress_file_Click"
-        Style="{StaticResource Btn-Success}"
-        Width="120">
-                            Start compress
-                        </Button>
-
-                        <Button 
-        x:Name="btn_cancell_compress_filepdf"
-        Margin="0,10,0,20"
-        Width="70"
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center"
-        Click="btn_cancell_compress_file_Click"
-        Style="{StaticResource Btn-Danger}"
-        Visibility="Hidden">
-                            Cancel
-                        </Button>
-
-                    </StackPanel>
-                </TabItem>
-
                 <TabItem Header="About Me" Padding="20">
                     <StackPanel VerticalAlignment="Top">
-                        <Image Source="/AmirHosseinEA-Logo-Tr.png" HorizontalAlignment="Center" Width="200" />
 
-                        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,20" FontSize="20" FontWeight="Bold" Foreground="Black">AmirHosseinEA</TextBlock>
+                        <Image Source="/amirhosseinea_logo.png"
+                           HorizontalAlignment="Center"
+                           Width="200"
+                           Margin="0,30,0,5"/>
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,30" FontSize="25" Foreground="#FF5120CC" FontWeight="Bold" FontStyle="Italic">AmirHossein EA</TextBlock>
 
                         <!-- Link/Button at the bottom -->
                         <Button x:Name="btn_amirhosseinea_linkedin" Content="My linkedIn" Style="{StaticResource Btn-Primary}" HorizontalAlignment="Center" Width="100" Click="btn_amirhosseinea_linkedin_Click" Margin="0 0 0 10" />
                         <Button x:Name="btn_amirhosseinea_github" Content="My Github" Style="{StaticResource Btn-Dark}" HorizontalAlignment="Center" Width="100" Click="btn_amirhosseinea_github_Click" />
+
+                        <TextBlock HorizontalAlignment="Center" Margin="0,60,0,0" FontSize="12" Foreground="#000" FontFamily="Arial">app version: 1.1</TextBlock>
+
                     </StackPanel>
                 </TabItem>
             </TabControl>

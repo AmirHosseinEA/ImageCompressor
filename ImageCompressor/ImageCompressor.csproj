@@ -9,19 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AmirHosseinEA-Logo-Tr.png" />
+    <None Remove="amirhosseinea_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="amirhosseinea_logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Content Include="icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.10.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="AmirHosseinEA-Logo-Tr.png" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.14.0" />
   </ItemGroup>
 
 </Project>

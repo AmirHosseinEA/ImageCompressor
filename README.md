@@ -14,4 +14,4 @@ To use it download from [Release](https://github.com/AmirHosseinEA/ImageCompress
 
 ## Requirements
 
-- [Microsoft .NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [Microsoft .NET 10.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
